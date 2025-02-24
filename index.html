@@ -14,70 +14,62 @@
             color: #333;
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: auto;
             background: white;
-            padding: 20px;
+            padding: 40px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 50px;
+            min-height: 150vh;
         }
         h1 {
             font-size: 2.5em;
         }
-        .repositories {
+        .separator {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 50px 0;
+        }
+        .repositories, .reviews {
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            flex-wrap: nowrap;
+            margin-top: 40px;
         }
-        .repo {
+        .repo, .review {
             background: #fff;
-            padding: 15px;
-            margin: 10px;
+            padding: 20px;
             border-radius: 5px;
             text-decoration: none;
             color: #333;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 250px;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .repo img {
-            width: 100%;
+        .repo img, .review img {
+            width: 100px;
             border-radius: 5px;
         }
-        .repo:hover {
+        .repo:hover, .review:hover {
             transform: scale(1.05);
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        }
-        .reviews {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .review {
-            background: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            width: 250px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .review img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
         }
         .review-content {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .review p {
+            margin: 5px 0;
         }
         .socials {
-            margin-top: 20px;
+            margin-top: 50px;
         }
         .socials a {
             margin: 0 10px;
@@ -96,8 +88,12 @@
         <h1>mr_ked</h1>
         <p>Error 404: Текст не обнаружен</p>
         
+        <div class="separator"></div>
+        
         <h2>Обо мне</h2>
         <p>Я – ученик 11 класса, готовлюсь к ЕГЭ по информатике. В свободное время люблю программировать и  реализовывать интересные идеи, когда они приходят в голову. Постоянно развиваюсь в этой сфере и  экспериментирую с разными проектами.</p>
+        
+        <div class="separator"></div>
         
         <h2>Repositories</h2>
         <div class="repositories">
@@ -115,30 +111,34 @@
             </a>
         </div>
         
+        <div class="separator"></div>
+        
         <h2>Отзывы довольных пользователей</h2>
         <div class="reviews">
             <div class="review">
-                <img src="images/yurchikxx.png" alt="yurchikxx">
+                <img src="images/avatar1.png" alt="avatar1">
                 <div class="review-content">
+                    <p><strong>mzavgorodniy</strong></p>
                     <p>“здесь могла быть ваша реклама”</p>
-                    <p>- yurchikxx</p>
                 </div>
             </div>
             <div class="review">
-                <img src="images/mzavgorodniy.png" alt="mzavgorodniy">
+                <img src="images/avatar2.png" alt="avatar2">
                 <div class="review-content">
+                    <p><strong>yurchikxx</strong></p>
                     <p>“прикольно”</p>
-                    <p>- mzavgorodniy</p>
                 </div>
             </div>
             <div class="review">
-                <img src="images/onishi.png" alt="Onishi">
+                <img src="images/avatar3.png" alt="avatar3">
                 <div class="review-content">
+                    <p><strong>Onishi</strong></p>
                     <p>“chat gpt имба”</p>
-                    <p>- Onishi</p>
                 </div>
             </div>
         </div>
+        
+        <div class="separator"></div>
         
         <div class="socials">
             <a href="https://vk.com/mr__fed" target="_blank">VK</a>
