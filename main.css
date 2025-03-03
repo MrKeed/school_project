@@ -108,7 +108,7 @@ body {
             max-width: 600px;
             line-height: 1.6;
         }
-        .me iframe {
+        .separator iframe {
             width: 200px;
             height: 200px;
             object-fit: cover;
