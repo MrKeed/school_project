@@ -6,33 +6,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Описание работы constitution-eight</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="main.css">
+    <title>Mr_Ked - Конституция РФ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Описание работы сайта mr_ked</h1>
+    <header class="header">
+        <h1>Mr_Ked</h1>
+        <p>Удобный инструмент для поиска и изучения Конституции РФ</p>
     </header>
-
-    <section id="description">
-        <h2>Что такое mr_ked?</h2>
-        <p>Mr_ked — это удобный инструмент для поиска и изучения Конституции РФ. Сайт предлагает простой интерфейс, позволяющий быстро находить нужную информацию и изучать её в удобном формате.</p>
-        
-        <h2>Ключевые функции</h2>
+    
+    <nav class="menu">
         <ul>
-            <li>Поиск по статьям Конституции.</li>
-            <li>Навигация по главам и разделам документа.</li>
-            <li>Возможность просмотра текста статей в удобной форме.</li>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#articles">Статьи</a></li>
+            <li><a href="#about">О сайте</a></li>
         </ul>
+    </nav>
+    
+    <!-- Основной контент -->
+    <main class="content">
+        <section id="articles">
+            <h2>Поиск по статьям Конституции РФ</h2>
+            <form action="/search" method="get">
+                <input type="text" placeholder="Введите номер статьи или ключевые слова">
+                <button type="submit">Найти</button>
+            </form>
+            
+            <div class="article-list">
+                <h3>Последние просмотренные статьи:</h3>
+                <ul>
+                    <li><a href="#">Статья 1</a></li>
+                    <li><a href="#">Статья 10</a></li>
+                    <li><a href="#">Статья 20</a></li>
+                </ul>
+            </div>
+        </section>
         
-        <h2>Почему стоит воспользоваться mr_ked?</h2>
-        <p>Сайт разработан с целью упрощения процесса ознакомления с Конституцией РФ. Удобный интерфейс и быстрый доступ к нужной информации делают его незаменимым инструментом для всех, кто интересуется правовыми вопросами.</p>
-    </section>
-
-    <footer>
-        <p>Посетите оригинальный сайт: <a href="https://constitution-eight.vercel.app/" target="_blank">mr_ked</a></p>
+        <section id="about">
+            <h2>О сайте Mr_Ked</h2>
+            <p>Mr_Ked — это удобный инструмент для поиска и изучения Конституции РФ. Сайт предлагает простой интерфейс, позволяющий быстро находить нужную информацию и изучать её в удобном формате.</p>
+            <p>Основные функции включают:</p>
+            <ul>
+                <li>Поиск по статьям Конституции.</li>
+                <li>Навигация по главам и разделам документа.</li>
+                <li>Возможность просмотра текста статей в удобной форме.</li>
+            </ul>
+            <p>Посетите наш официальный сайт: <a href="https://constitution-eight.vercel.app/">mr_ked</a>.</p>
+        </section>
+    </main>
+    
+    <!-- Футер -->
+    <footer class="footer">
+        <p>© 2023 Mr_Ked. Все права защищены.</p>
     </footer>
-
 </body>
 </html>
