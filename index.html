@@ -152,8 +152,6 @@
                 lastSentTime = Date.now();
                 alert("Заказ успешно отправлен!");
                 document.getElementById("orderForm").reset();
-            } else {
-                alert("Ошибка при отправке: " + (result.error || "неизвестная ошибка"));
             }
         })
         .catch(error => {
