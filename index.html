@@ -117,37 +117,52 @@
             </a>
         </div>
  </div>
-    <script>
-    document.getElementById("orderForm").addEventListener("submit", async function(event) {
+  <script>
+    let lastSentTime = 0;
+    const cooldown = 5000; 
+
+    function sendOrder(event) {
         event.preventDefault();
 
-        const formData = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            projectDescription: document.getElementById("projectDescription").value
-        };
+        let now = Date.now();
+        if (now - lastSentTime < cooldown) {
+            alert("Подождите перед повторной отправкой.");
+            return;
+        }
 
-        try {
-            const response = await fetch("http://localhost:3000/send", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let projectDescription = document.getElementById("projectDescription").value.trim();
 
-            const result = await response.json();
+        if (!name || !email || !projectDescription) {
+            alert("Пожалуйста, заполните все поля.");
+            return;
+        }
 
-            if (response.ok) {
+        let url = "/api/send"; 
+
+        fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, projectDescription })
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                lastSentTime = Date.now();
                 alert("Заказ успешно отправлен!");
                 document.getElementById("orderForm").reset();
             } else {
-                alert("Ошибка: " + result.error);
+                alert("Ошибка при отправке: " + (result.error || "неизвестная ошибка"));
             }
-        } catch (error) {
-            alert("Ошибка отправки данных: " + error.message);
-        }
-    });
+        })
+        .catch(error => {
+            console.error("Ошибка сети:", error);
+            alert("Ошибка сети. Проверьте консоль.");
+        });
+    }
+
+    document.getElementById("orderForm").addEventListener("submit", sendOrder);
 </script>
 </body>             
 </html>
