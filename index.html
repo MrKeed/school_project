@@ -117,9 +117,9 @@
             </a>
         </div>
  </div>
-  <script>
+<script>
     let lastSentTime = 0;
-    const cooldown = 5000; 
+    const cooldown = 60000;
 
     function sendOrder(event) {
         event.preventDefault();
@@ -139,7 +139,7 @@
             return;
         }
 
-        let url = "/api/send"; 
+        let url = "/api/send";
 
         fetch(url, {
             method: "POST",
@@ -148,10 +148,13 @@
         })
         .then(response => response.json())
         .then(result => {
-            if (result.success) {
+            if (result.message) {
                 lastSentTime = Date.now();
-                alert("Заказ успешно отправлен!");
+                updateCooldownMessage();
                 document.getElementById("orderForm").reset();
+                alert(" Заказ успешно отправлен!");
+            } else {
+                alert(" Ошибка при отправке: " + (result.error || "Неизвестная ошибка"));
             }
         })
         .catch(error => {
@@ -161,6 +164,11 @@
     }
 
     document.getElementById("orderForm").addEventListener("submit", sendOrder);
+
+    function updateCooldownMessage() {
+        console.log("Ожидание перед повторной отправкой...");
+    }
 </script>
+
 </body>             
 </html>
