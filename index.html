@@ -82,22 +82,21 @@
                 </div>
 <div class="separator"></div>
         
-            <div class="container">
+    <div class="container">
         <h2>Заказ проекта</h2>
         <form id="orderForm">
             <label for="name">Ваше имя:</label><br>
             <input type="text" id="name" name="name" required><br>
-            
+    
             <label for="email">Электронная почта:</label><br>
             <input type="email" id="email" name="email" required><br>
-            
+    
             <label for="projectDescription">Описание проекта:</label><br>
             <textarea id="projectDescription" name="projectDescription" rows="4" cols="50"></textarea><br>
-            
+    
             <button type="submit">Отправить</button>
         </form>
     </div>
-            <script src="script.js"></script>
         <div class="separator"></div>
         
     <div class="socials">
@@ -118,6 +117,37 @@
             </a>
         </div>
  </div>
-</body>        
-        
+    <script>
+    document.getElementById("orderForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            projectDescription: document.getElementById("projectDescription").value
+        };
+
+        try {
+            const response = await fetch("http://localhost:3000/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert("Заказ успешно отправлен!");
+                document.getElementById("orderForm").reset();
+            } else {
+                alert("Ошибка: " + result.error);
+            }
+        } catch (error) {
+            alert("Ошибка отправки данных: " + error.message);
+        }
+    });
+</script>
+</body>             
 </html>
