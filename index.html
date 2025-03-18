@@ -97,7 +97,11 @@
         </form>
     </div>
         <div class="separator"></div>
-        
+            <h1>Испытай свою удачу!</h1>
+    <button id="luckButton">Нажми меня</button>
+    <div class="result"></div>
+
+        <div class="separator"></div>        
     <div class="socials">
             <a href="https://vk.com/me" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" x="80px" y="80px" width="40" height="40" viewBox="0 0 50 50">
@@ -117,6 +121,8 @@
         </div>
  </div>
 <script>
+document.getElementById('luckButton').addEventListener('click', function() { const luckMessages = [ 'Сегодня твой день! Удача на твоей стороне.', 'Неудачный день. Попробуй снова завтра.', 'Средний день. Ничего особенного не ожидается.' ]; const randomIndex = Math.floor(Math.random() * luckMessages.length); document.querySelector('.result').innerHTML = luckMessages[randomIndex]; }); 
+    
     let lastSentTime = 0;
     const cooldown = 60000;
 
