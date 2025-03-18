@@ -129,6 +129,7 @@ body {
             
             form {
                 display: flex;
+                max-width: 600px;
                 flex-direction: column;
             }
             
