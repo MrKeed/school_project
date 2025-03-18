@@ -127,21 +127,11 @@ body {
             line-height: 1.6;
         }
             
-.form-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 20px 0;  
-}
 
-/* Стиль самой формы */
+
 form {
     display: flex;
-    max-width: 800px;
     flex-direction: column;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff; 
 }
 
 label {
