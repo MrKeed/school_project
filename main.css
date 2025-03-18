@@ -132,8 +132,7 @@ body {
 .form-container {
             display: flex;
             justify-content: center;  
-            width: 60%;
-            max-width: 1400px;
+            width: 800px;;
             margin: auto;
             background: white;
             padding: 60px;
