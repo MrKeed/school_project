@@ -128,10 +128,11 @@ body {
         }
             
             form {
-                display: flex;
-                max-width: 800px;
-                object-fit: center;                        
-                flex-direction: column;
+                        display: flex;
+                        max-width: 800px;
+                        flex-direction: column;
+                        padding: 20px;
+                        border-radius: 10px;
             }
             
             label {
