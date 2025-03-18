@@ -130,7 +130,7 @@ body {
             form {
                 display: flex;
                 max-width: 800px;
-                align-items: center;                        
+                object-fit: center;                        
                 flex-direction: column;
             }
             
